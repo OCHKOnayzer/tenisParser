@@ -33,7 +33,7 @@ function parseFora1(html: string): ParsedResult {
     const FindCount = firstDiv.find('.parameter--h05r6');
     let count = FindCount.text().trim();
 
-    // Инициализируем переменную result перед использованием
+   
     let result: Result = {
         type: 'handicap',
         player: 2,
@@ -41,7 +41,7 @@ function parseFora1(html: string): ParsedResult {
         over: true
     };
 
-    // Определение типа события (match/set)
+  
     const eventType = $('.coupon-cart-bet--FVlIe').text().toLowerCase();
 
     if (eventType.includes('сет')) {

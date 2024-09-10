@@ -1,4 +1,4 @@
-import parseWIN2 from '../parsService/win2'; // Обновите путь к вашему модулю
+import parseWIN2 from '../parsService/win2'; 
 
 describe('parseWIN2', () => {
     test('should handle HTML with incorrect formatting gracefully', () => {

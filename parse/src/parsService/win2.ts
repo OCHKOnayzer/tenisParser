@@ -28,7 +28,6 @@ function parseWIN2(html: string): ParsedResult {
         period: 'match',
     };
 
-    // Извлечение имен игроков
     const eventName = targetElement.find('.group--hAXBT._event-name--jqpbC').text().trim();
     const playerNames = eventName.split(/–|-/).map(name => name.trim());
     if (playerNames.length === 2) {
@@ -39,7 +38,6 @@ function parseWIN2(html: string): ParsedResult {
         name1 = firstSpanText;
     }
 
-    // Извлечение результата
     const findMath = targetElement.find('.group--hAXBT._event-name--jqpbC').next();
     let resultText = findMath ? findMath.text().trim() : '';
 
@@ -51,7 +49,6 @@ function parseWIN2(html: string): ParsedResult {
         period: 'match',
     };
 
-    // Извлечение коэффициента
     const thirdDiv = targetElement.find('div').eq(2);
 
     if (thirdDiv) {

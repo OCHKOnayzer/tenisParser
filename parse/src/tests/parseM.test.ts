@@ -1,4 +1,4 @@
-import parseM from '../parsService/MParsServise'; // Обновите путь к вашему модулю
+import parseM from '../parsService/MParsServise'; 
 
 describe('parseM', () => {
     test('should correctly parse HTML with two player names', () => {
@@ -21,9 +21,9 @@ describe('parseM', () => {
         expect(result).toEqual({
             name1: 'Player1',
             name2: 'Player2',
-            rate: '', // Обновлено на пустую строку для совпадения с результатами
+            rate: '', 
             result: {
-                count: 0, // Обновлено на 0
+                count: 0,
                 type: 'total',
                 player: 0,
                 period: 'match',
@@ -51,9 +51,9 @@ describe('parseM', () => {
         expect(result).toEqual({
             name1: 'Player1',
             name2: 'Player2',
-            rate: '', // Обновлено на пустую строку для совпадения с результатами
+            rate: '',
             result: {
-                count: 0, // Обновлено на 0
+                count: 0,
                 type: 'total',
                 player: 0,
                 period: 'match',
@@ -82,10 +82,10 @@ describe('parseM', () => {
         const result = parseM(html);
         expect(result).toEqual({
             name1: 'Player1',
-            name2: 'some text', // Обновлено на 'some text'
-            rate: '', // Обновлено на пустую строку для совпадения с результатами
+            name2: 'some text',
+            rate: '',
             result: {
-                count: 0, // Обновлено на 0
+                count: 0,
                 type: 'total',
                 player: 0,
                 period: 'match',
@@ -111,11 +111,11 @@ describe('parseM', () => {
         `;
         const result = parseM(html);
         expect(result).toEqual({
-            name1: '', // Обновлено на пустую строку для совпадения с результатами
-            name2: '', // Обновлено на пустую строку для совпадения с результатами
-            rate: '', // Обновлено на пустую строку для совпадения с результатами
+            name1: '',
+            name2: '',
+            rate: '',
             result: {
-                count: 0, // Обновлено на 0
+                count: 0,
                 type: 'total',
                 player: 0,
                 period: 'match',
@@ -144,9 +144,9 @@ describe('parseM', () => {
         expect(result).toEqual({
             name1: 'Player1',
             name2: 'Player2',
-            rate: '', // Обновлено на пустую строку для совпадения с результатами
+            rate: '',
             result: {
-                count: 0, // Обновлено на 0
+                count: 0,
                 type: 'total',
                 player: 0,
                 period: 'match',

@@ -70,8 +70,6 @@ function parseB(html: string): ParsedResult {
         let resultText = findMath ? findMath.text().trim() : '';
 
         resultText = resultText.replace(/&gt;/g, '>').replace(/&lt;/g, '<');
-
-        // Проверка на наличие слова "сет"
         if (secondDiv.text().includes('сет')) {
             result.period = 'set';
         }

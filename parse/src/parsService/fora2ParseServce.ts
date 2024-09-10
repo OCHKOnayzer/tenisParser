@@ -67,7 +67,6 @@ function parseFora2(html: string): ParsedResult {
         over: true
     };
 
-    // Определение типа события (match/set)
     const eventType = $('.coupon-cart-bet--FVlIe').text().toLowerCase();
 
     if (eventType.includes('сет')) {
