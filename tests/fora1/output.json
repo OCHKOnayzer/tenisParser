@@ -1,5 +1,12 @@
 {
-  "gamers": "Кудерметова В (-4.5) – Викери С",
-  "result": "1",
-  "kaficient": "1.85"
+  "name1": "Кудерметова В",
+  "name2": "Викери С",
+  "result": {
+    "type": "handicap",
+    "player": 1,
+    "period": "match",
+    "over": true,
+    "count": 4.5
+  },
+  "rate": "1.85"
 }

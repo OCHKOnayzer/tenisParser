@@ -1,5 +1,10 @@
 {
-  "gamers": "Кудерметова В – Викери С",
-  "result": "Поб 2",
-  "kaficient": "4.10"
+  "name1": "Кудерметова В",
+  "name2": "Викери С",
+  "result": {
+    "type": "win",
+    "player": 2,
+    "period": "match"
+  },
+  "rate": "4.10"
 }
