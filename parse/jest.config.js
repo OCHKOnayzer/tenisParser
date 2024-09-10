@@ -1,14 +1,12 @@
-/** @type {import('jest').Config} */
-const config = {
+/** @type {import('ts-jest').JestConfigWithTsJest} */
+module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
+  moduleFileExtensions: ['ts', 'js'],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.ts$': 'ts-jest',
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  transformIgnorePatterns: [
-    '<rootDir>/node_modules/(?!chai-as-promised|check-error)'
-  ],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/'],
+  coverageDirectory: './coverage',
+  collectCoverageFrom: ['src/**/*.ts'],
 };
-
-module.exports = config;
