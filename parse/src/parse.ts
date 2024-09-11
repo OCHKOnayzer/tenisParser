@@ -1,21 +1,41 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import parseFunction from './parseFunction';
+import parseFora1 from './parsService/fora1ParseService';
+import parseFora2 from './parsService/fora2ParseServce';
+import parseB from './parsService/BParsingService';
+import parseM from './parsService/MParsServise';
+import parseWIN1 from './parsService/win1';
+import parseWIN2 from './parsService/win2';
 
-type ParseType = 'fora1' | 'fora2' | 'B' | 'M' | '1' | '2' |'setFora1'|'setFora2'| 'setTotalB' | 'setTotalM';
+const parserMap: Record<string, (html: string) => any> = {
+  fora1: parseFora1,
+  setFora1: parseFora1,
+  fora2: parseFora2,
+  setFora2: parseFora2,
+  B: parseB,
+  setTotalB: parseB,
+  M: parseM,
+  setTotalM: parseM,
+  '1': parseWIN1,
+  '2': parseWIN2
+};
 
-function parseFile(type: ParseType) {
-    const htmlPath: string = path.resolve(__dirname, `../../tests/${type}/input.html`);
+function runSingleParser(type: string) {
+  const parseFunction = parserMap[type];
+  if (!parseFunction) {
+    console.error(`Парсер для типа ${type} не найден.`);
+    return;
+  }
 
-    fs.readFile(htmlPath, 'utf-8', (err, html) => {
-        if (err) {
-            console.error('Ошибка чтения файла:', err);
-            return;
-        }
-
-        const result = parseFunction(html, type);
-        console.log('Результат парсинга:', JSON.stringify(result, null, 2));
-    });
+  const htmlPath = path.resolve(__dirname, `../../tests/${type}/input.html`);
+  fs.readFile(htmlPath, 'utf-8', (err, html) => {
+    if (err) {
+      console.error(`Ошибка чтения файла ${htmlPath}:`, err);
+      return;
+    }
+    const result = parseFunction(html);
+    console.log(`Результат парсинга для ${type}:`, JSON.stringify(result, null, 2));
+  });
 }
 
-parseFile('2');
+runSingleParser('1');
