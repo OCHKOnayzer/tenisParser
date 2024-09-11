@@ -1,12 +1,12 @@
 {
-    "name1": "Эала А",
-    "name2": "Бузкова М",
-    "result": {
-      "type": "handicap",
-      "player": 2,
-      "period": "set",
-      "over": false,
-      "count": 2.5
-    },
-    "rate": "2.19"
-  }
+  "name1": "Эала А",
+  "name2": "Бузкова М",
+  "result": {
+    "type": "handicap",
+    "player": 2,
+    "period": "set",
+    "over": true,
+    "count": 2.5
+  },
+  "rate": "2.19"
+}

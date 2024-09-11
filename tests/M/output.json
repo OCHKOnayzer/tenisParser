@@ -1,12 +1,12 @@
 {
-  "name1": "Кудерметова В",
+ "name1": "Кудерметова В",
   "name2": "Викери С",
-  "result": {
-    "type": "total",
-    "player": 0,
-    "period": "match",
-    "under": true,
-    "count": 21.5
-  },
-  "rate": "2.00"
+  "rate": "2.00",
+    "result": {
+      "count": 21.5,
+       "period": "match",
+       "player": 0,
+       "type": "total",
+        "under": true
+      } 
 }
