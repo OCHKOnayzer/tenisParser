@@ -20,10 +20,10 @@ const parserMap: Record<string, (html: string) => any> = {
   '2': parseWIN2
 };
 
-function prase(parserType: string) {
+function testFunction(parserType: string) {
   const parseFunction = parserMap[parserType];
   if (!parseFunction) {
-    throw new Error(`Парсер для типа ${parserType} не найден.`);
+    throw new Error(`Парсер для ${parserType} не найден.`);
   }
 
   const htmlPath = path.resolve(__dirname, `../../../tests/${parserType}/input.html`);
@@ -36,47 +36,47 @@ function prase(parserType: string) {
   
   const expectedResult = JSON.parse(fs.readFileSync(outputFilePath, 'utf-8'));
 
-  const result = parseFunction(html);
+  const result = parseFunction(html);// функция принимает только html
 
   expect(result).toEqual(expectedResult);
 }
 
 test('should correctly parse fora1', () => {
-  prase('fora1');
+    testFunction('fora1');
 });
 
 test('should correctly parse setFora1', () => {
-  prase('setFora1');
+    testFunction('setFora1');
 });
 
 test('should correctly parse fora2', () => {
-  prase('fora2');
+    testFunction('fora2');
 });
 
 test('should correctly parse setFora2', () => {
-  prase('setFora2');
+    testFunction('setFora2');
 });
 
 test('should correctly parse B', () => {
-  prase('B');
+    testFunction('B');
 });
 
 test('should correctly parse setTotalB', () => {
-  prase('setTotalB');
+    testFunction('setTotalB');
 });
 
 test('should correctly parse M', () => {
-  prase('M');
+    testFunction('M');
 });
 
 test('should correctly parse setTotalM', () => {
-  prase('setTotalM');
+    testFunction('setTotalM');
 });
 
 test('should correctly parse 1', () => {
-  prase('1');
+    testFunction('1');
 });
 
 test('should correctly parse 2', () => {
-  prase('2');
+    testFunction('2');
 });
