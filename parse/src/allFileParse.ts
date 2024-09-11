@@ -27,7 +27,7 @@ export default function runAllParsers() {
           console.error(`Ошибка чтения файла ${htmlPath}:`, err);
           return;
         }
-        const result = parseFunction(html);
+        const result = parseFunction(html); // приниает только html
         console.log(`Результат парсинга для ${fileType}:`, JSON.stringify(result, null, 2));
       });
     });

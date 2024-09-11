@@ -33,7 +33,7 @@ function runSingleParser(type: string) {
       console.error(`Ошибка чтения файла ${htmlPath}:`, err);
       return;
     }
-    const result = parseFunction(html);
+    const result = parseFunction(html); // функция так же принимает только html
     console.log(`Результат парсинга для ${type}:`, JSON.stringify(result, null, 2));
   });
 }
